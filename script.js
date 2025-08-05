@@ -2,6 +2,7 @@
 let currentSlide = 0
 const slides = document.querySelectorAll(".carousel-slide")
 const totalSlides = slides.length
+let emailjs // Declare the emailjs variable
 
 // Función para cambiar slides del carrusel
 function changeSlide(direction) {
@@ -92,13 +93,26 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       })
     }
   })
-})
+})(
+  // Configuración de EmailJS
+  () => {
+    // Import EmailJS library
+    emailjs = window.emailjs // Assign the EmailJS library to the declared variable
+    // Inicializar EmailJS con tu Public Key
+    emailjs.init("TU_PUBLIC_KEY_AQUI") // Reemplazar con tu Public Key real
+  },
+)()
 
-// Formulario de contacto
+// Formulario de contacto con EmailJS
 const contactForm = document.getElementById("contactForm")
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault()
+
+    // Obtener elementos del botón
+    const submitBtn = this.querySelector(".submit-btn")
+    const btnText = submitBtn.querySelector(".btn-text")
+    const btnLoading = submitBtn.querySelector(".btn-loading")
 
     // Obtener datos del formulario
     const formData = new FormData(this)
@@ -106,31 +120,105 @@ if (contactForm) {
 
     // Validación básica
     if (!data.nombre || !data.email || !data.mensaje) {
-      alert("Por favor, completa todos los campos obligatorios.")
+      showNotification("Por favor, completa todos los campos obligatorios.", "error")
       return
     }
 
     // Validación de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(data.email)) {
-      alert("Por favor, ingresa un email válido.")
+      showNotification("Por favor, ingresa un email válido.", "error")
       return
     }
 
-    // Simular envío del formulario
-    const submitBtn = this.querySelector(".submit-btn")
-    const originalText = submitBtn.textContent
-
-    submitBtn.textContent = "Enviando..."
+    // Mostrar estado de carga
     submitBtn.disabled = true
+    btnText.style.display = "none"
+    btnLoading.style.display = "flex"
 
-    // Simular delay de envío
-    setTimeout(() => {
-      alert("¡Gracias por tu mensaje! Te contactaremos pronto.")
-      this.reset()
-      submitBtn.textContent = originalText
-      submitBtn.disabled = false
-    }, 2000)
+    // Preparar parámetros para EmailJS
+    const templateParams = {
+      from_name: data.nombre,
+      from_email: data.email,
+      phone: data.telefono || "No proporcionado",
+      company: data.empresa || "No proporcionado",
+      service: data.servicio || "No especificado",
+      budget: data.presupuesto || "No especificado",
+      message: data.mensaje,
+      to_name: "Agencia de Diseño", // Nombre de tu agencia
+    }
+
+    // Enviar email usando EmailJS
+    emailjs
+      .send(
+        "TU_SERVICE_ID", // Reemplazar con tu Service ID
+        "TU_TEMPLATE_ID", // Reemplazar con tu Template ID
+        templateParams,
+      )
+      .then(
+        (response) => {
+          console.log("Email enviado exitosamente:", response)
+          showNotification("¡Gracias por tu mensaje! Te contactaremos pronto.", "success")
+          contactForm.reset()
+        },
+        (error) => {
+          console.error("Error al enviar email:", error)
+          showNotification("Hubo un error al enviar tu mensaje. Por favor, intenta nuevamente.", "error")
+        },
+      )
+      .finally(() => {
+        // Restaurar estado del botón
+        submitBtn.disabled = false
+        btnText.style.display = "inline"
+        btnLoading.style.display = "none"
+      })
+  })
+}
+
+// Función para mostrar notificaciones
+function showNotification(message, type = "info") {
+  // Crear elemento de notificación
+  const notification = document.createElement("div")
+  notification.className = `notification notification-${type}`
+  notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">
+                ${type === "success" ? "✓" : type === "error" ? "✕" : "ℹ"}
+            </span>
+            <span class="notification-message">${message}</span>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `
+
+  // Agregar al DOM
+  document.body.appendChild(notification)
+
+  // Mostrar con animación
+  setTimeout(() => {
+    notification.classList.add("show")
+  }, 100)
+
+  // Auto-remover después de 5 segundos
+  setTimeout(() => {
+    if (notification.parentElement) {
+      notification.classList.remove("show")
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.remove()
+        }
+      }, 300)
+    }
+  }, 5000)
+}
+
+// Auto-completar email de prueba (solo para desarrollo)
+if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+  document.addEventListener("DOMContentLoaded", () => {
+    const emailInput = document.getElementById("email")
+    if (emailInput && !emailInput.value) {
+      // Solo para pruebas locales
+      console.log("Modo desarrollo detectado")
+    }
   })
 }
 
