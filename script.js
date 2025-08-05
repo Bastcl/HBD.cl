@@ -518,3 +518,198 @@ document.addEventListener("keydown", (event) => {
     closeModal()
   }
 })
+
+// ===== FUNCIONALIDAD PARA PÁGINA DE CONTACTO =====
+
+// FAQ Interactivo
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item")
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question")
+
+    question.addEventListener("click", () => {
+      // Cerrar otros FAQs
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active")
+        }
+      })
+
+      // Toggle el FAQ actual
+      item.classList.toggle("active")
+    })
+  })
+})
+
+// Animaciones de entrada para elementos de contacto
+const observeContactElements = () => {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1"
+        entry.target.style.transform = "translateY(0)"
+      }
+    })
+  }, observerOptions)
+
+  // Observar tarjetas de contacto
+  document.querySelectorAll(".contact-card").forEach((card, index) => {
+    card.style.opacity = "0"
+    card.style.transform = "translateY(30px)"
+    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`
+    observer.observe(card)
+  })
+
+  // Observar elementos del formulario
+  document.querySelectorAll(".form-intro, .contact-form-container").forEach((element) => {
+    element.style.opacity = "0"
+    element.style.transform = "translateY(30px)"
+    element.style.transition = "opacity 0.8s ease, transform 0.8s ease"
+    observer.observe(element)
+  })
+}
+
+// Inicializar animaciones cuando el DOM esté listo
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", observeContactElements)
+} else {
+  observeContactElements()
+}
+
+// Smooth scroll para enlaces internos en la página de contacto
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault()
+    const target = document.querySelector(this.getAttribute("href"))
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  })
+})
+
+// Validación mejorada del formulario
+const enhanceFormValidation = () => {
+  const form = document.getElementById("contactForm")
+  if (!form) return
+
+  const inputs = form.querySelectorAll("input, select, textarea")
+
+  inputs.forEach((input) => {
+    // Validación en tiempo real
+    input.addEventListener("blur", () => {
+      validateField(input)
+    })
+
+    // Limpiar errores al escribir
+    input.addEventListener("input", () => {
+      clearFieldError(input)
+    })
+  })
+}
+
+function validateField(field) {
+  const value = field.value.trim()
+  let isValid = true
+  let errorMessage = ""
+
+  // Validaciones específicas
+  switch (field.type) {
+    case "email":
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (value && !emailRegex.test(value)) {
+        isValid = false
+        errorMessage = "Por favor, ingresa un email válido"
+      }
+      break
+
+    case "tel":
+      const phoneRegex = /^[+]?[0-9\s\-$$$$]{10,}$/
+      if (value && !phoneRegex.test(value)) {
+        isValid = false
+        errorMessage = "Por favor, ingresa un teléfono válido"
+      }
+      break
+  }
+
+  // Campos requeridos
+  if (field.hasAttribute("required") && !value) {
+    isValid = false
+    errorMessage = "Este campo es obligatorio"
+  }
+
+  // Mostrar/ocultar error
+  if (!isValid) {
+    showFieldError(field, errorMessage)
+  } else {
+    clearFieldError(field)
+  }
+
+  return isValid
+}
+
+function showFieldError(field, message) {
+  clearFieldError(field)
+
+  const errorDiv = document.createElement("div")
+  errorDiv.className = "field-error"
+  errorDiv.textContent = message
+  errorDiv.style.color = "#e74c3c"
+  errorDiv.style.fontSize = "0.9rem"
+  errorDiv.style.marginTop = "5px"
+
+  field.parentNode.appendChild(errorDiv)
+  field.style.borderColor = "#e74c3c"
+}
+
+function clearFieldError(field) {
+  const errorDiv = field.parentNode.querySelector(".field-error")
+  if (errorDiv) {
+    errorDiv.remove()
+  }
+  field.style.borderColor = ""
+}
+
+// Inicializar validación mejorada
+document.addEventListener("DOMContentLoaded", enhanceFormValidation)
+
+// Contador de caracteres para textarea
+const addCharacterCounter = () => {
+  const textarea = document.getElementById("mensaje")
+  if (!textarea) return
+
+  const counter = document.createElement("div")
+  counter.className = "char-counter"
+  counter.style.textAlign = "right"
+  counter.style.fontSize = "0.9rem"
+  counter.style.color = "#666"
+  counter.style.marginTop = "5px"
+
+  textarea.parentNode.appendChild(counter)
+
+  const updateCounter = () => {
+    const length = textarea.value.length
+    const maxLength = 500
+    counter.textContent = `${length}/${maxLength} caracteres`
+
+    if (length > maxLength * 0.9) {
+      counter.style.color = "#e74c3c"
+    } else {
+      counter.style.color = "#666"
+    }
+  }
+
+  textarea.addEventListener("input", updateCounter)
+  updateCounter()
+}
+
+// Inicializar contador
+document.addEventListener("DOMContentLoaded", addCharacterCounter)
