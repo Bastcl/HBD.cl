@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Agencia de Diseño</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio-styles.css">
+    <script src="portfolio-manager.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -52,11 +54,7 @@
     <section class="portfolio-filters">
         <div class="container">
             <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="web">Diseño Web</button>
-                <button class="filter-btn" data-filter="branding">Branding</button>
-                <button class="filter-btn" data-filter="grafico">Diseño Gráfico</button>
-                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <!-- Los filtros se cargarán dinámicamente -->
             </div>
         </div>
     </section>
@@ -65,131 +63,7 @@
     <section class="portfolio-gallery">
         <div class="container">
             <div class="portfolio-grid">
-                <!-- Proyecto 1 -->
-                <div class="portfolio-item" data-category="web branding">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto E-commerce">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>TechStore Online</h4>
-                                <p>E-commerce • Branding</p>
-                                <button class="view-project" onclick="openModal('project1')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto Restaurante">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Restaurante Sabores</h4>
-                                <p>Identidad de Marca</p>
-                                <button class="view-project" onclick="openModal('project2')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto Corporativo">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Corporativo Innovar</h4>
-                                <p>Sitio Web Corporativo</p>
-                                <button class="view-project" onclick="openModal('project3')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 4 -->
-                <div class="portfolio-item" data-category="grafico marketing">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto Campaña">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Campaña Verano 2024</h4>
-                                <p>Marketing Digital • Gráfico</p>
-                                <button class="view-project" onclick="openModal('project4')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 5 -->
-                <div class="portfolio-item" data-category="branding grafico">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto Startup">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Startup EcoTech</h4>
-                                <p>Branding • Packaging</p>
-                                <button class="view-project" onclick="openModal('project5')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 6 -->
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto Portfolio">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Portfolio Artista</h4>
-                                <p>Sitio Web Personal</p>
-                                <button class="view-project" onclick="openModal('project6')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 7 -->
-                <div class="portfolio-item" data-category="marketing grafico">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto Evento">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Conferencia Tech 2024</h4>
-                                <p>Branding de Evento</p>
-                                <button class="view-project" onclick="openModal('project7')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 8 -->
-                <div class="portfolio-item" data-category="web branding">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto App">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>FitLife App</h4>
-                                <p>App Design • Branding</p>
-                                <button class="view-project" onclick="openModal('project8')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 9 -->
-                <div class="portfolio-item" data-category="grafico">
-                    <div class="portfolio-image">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Proyecto Revista">
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-info">
-                                <h4>Revista Lifestyle</h4>
-                                <p>Diseño Editorial</p>
-                                <button class="view-project" onclick="openModal('project9')">Ver Proyecto</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Los proyectos se cargarán dinámicamente -->
             </div>
         </div>
     </section>

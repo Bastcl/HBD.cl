@@ -1,0 +1,292 @@
+{
+  "projects": [
+    {
+      "id": "project1",
+      "title": "TechStore Online",
+      "category": "E-commerce • Branding",
+      "categories": ["web", "branding"],
+      "description": "Desarrollo completo de una tienda online moderna con sistema de gestión de inventario, carrito de compras y pasarela de pagos integrada.",
+      "image": "/placeholder.svg?height=400&width=600&text=TechStore+Online",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=TechStore+Desktop",
+        "/placeholder.svg?height=600&width=400&text=TechStore+Mobile",
+        "/placeholder.svg?height=400&width=600&text=TechStore+Admin"
+      ],
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
+      "results": [
+        "Aumento del 150% en ventas online",
+        "Reducción del 40% en tiempo de carga",
+        "Mejora del 60% en conversión",
+        "Implementación de 5 métodos de pago"
+      ],
+      "client": "TechStore Inc.",
+      "year": "2024",
+      "duration": "3 meses",
+      "url": "https://techstore-demo.com",
+      "featured": true,
+      "status": "completed"
+    },
+    {
+      "id": "project2",
+      "title": "Restaurante Sabores",
+      "category": "Identidad de Marca",
+      "categories": ["branding"],
+      "description": "Creación de identidad visual completa para restaurante, incluyendo logotipo, menús, señalética y material promocional.",
+      "image": "/placeholder.svg?height=400&width=600&text=Restaurante+Sabores",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Logo+Design",
+        "/placeholder.svg?height=600&width=800&text=Menu+Design",
+        "/placeholder.svg?height=600&width=800&text=Business+Cards"
+      ],
+      "technologies": ["Adobe Illustrator", "Photoshop", "InDesign", "After Effects"],
+      "results": [
+        "Incremento del 80% en reconocimiento de marca",
+        "Aumento del 45% en reservas",
+        "Mejora en percepción de calidad",
+        "Expansión a 3 nuevas ubicaciones"
+      ],
+      "client": "Restaurante Sabores",
+      "year": "2024",
+      "duration": "2 meses",
+      "url": null,
+      "featured": true,
+      "status": "completed"
+    },
+    {
+      "id": "project3",
+      "title": "Corporativo Innovar",
+      "category": "Sitio Web Corporativo",
+      "categories": ["web"],
+      "description": "Diseño y desarrollo de sitio web corporativo con enfoque en generación de leads y presentación de servicios profesionales.",
+      "image": "/placeholder.svg?height=400&width=600&text=Corporativo+Innovar",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Homepage+Design",
+        "/placeholder.svg?height=600&width=800&text=Services+Page",
+        "/placeholder.svg?height=600&width=800&text=Contact+Form"
+      ],
+      "technologies": ["WordPress", "PHP", "MySQL", "SEO", "Google Analytics"],
+      "results": [
+        "Aumento del 200% en leads calificados",
+        "Mejora del 70% en tiempo de permanencia",
+        "Posicionamiento en top 3 de Google",
+        "Reducción del 50% en tasa de rebote"
+      ],
+      "client": "Innovar Consulting",
+      "year": "2023",
+      "duration": "6 semanas",
+      "url": "https://innovar-consulting.com",
+      "featured": false,
+      "status": "completed"
+    },
+    {
+      "id": "project4",
+      "title": "Campaña Verano 2024",
+      "category": "Marketing Digital • Gráfico",
+      "categories": ["marketing", "grafico"],
+      "description": "Campaña integral de marketing digital para temporada de verano, incluyendo redes sociales, email marketing y publicidad online.",
+      "image": "/placeholder.svg?height=400&width=600&text=Campaña+Verano+2024",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Social+Media+Posts",
+        "/placeholder.svg?height=600&width=800&text=Email+Templates",
+        "/placeholder.svg?height=600&width=800&text=Banner+Ads"
+      ],
+      "technologies": ["Facebook Ads", "Instagram", "Mailchimp", "Google Analytics", "Canva Pro"],
+      "results": ["Alcance de 500K personas", "Engagement rate del 8.5%", "ROI del 320%", "15,000 nuevos seguidores"],
+      "client": "BeachWear Co.",
+      "year": "2024",
+      "duration": "4 meses",
+      "url": null,
+      "featured": true,
+      "status": "completed"
+    },
+    {
+      "id": "project5",
+      "title": "Startup EcoTech",
+      "category": "Branding • Packaging",
+      "categories": ["branding", "grafico"],
+      "description": "Desarrollo de marca para startup de tecnología ecológica, incluyendo naming, identidad visual y diseño de packaging sostenible.",
+      "image": "/placeholder.svg?height=400&width=600&text=Startup+EcoTech",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Brand+Identity",
+        "/placeholder.svg?height=600&width=800&text=Packaging+Design",
+        "/placeholder.svg?height=600&width=800&text=Marketing+Materials"
+      ],
+      "technologies": ["Adobe Creative Suite", "Sustainable Design", "3D Mockups", "Brand Strategy"],
+      "results": [
+        "Lanzamiento exitoso en 3 países",
+        "Reconocimiento en premios de diseño",
+        "Inversión de $2M conseguida",
+        "Certificación de packaging sostenible"
+      ],
+      "client": "EcoTech Solutions",
+      "year": "2023",
+      "duration": "5 meses",
+      "url": "https://ecotech-solutions.com",
+      "featured": false,
+      "status": "completed"
+    },
+    {
+      "id": "project6",
+      "title": "Portfolio Artista",
+      "category": "Sitio Web Personal",
+      "categories": ["web"],
+      "description": "Sitio web portfolio para artista visual con galería interactiva, blog y tienda online para venta de obras.",
+      "image": "/placeholder.svg?height=400&width=600&text=Portfolio+Artista",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Gallery+View",
+        "/placeholder.svg?height=600&width=800&text=Artwork+Detail",
+        "/placeholder.svg?height=600&width=800&text=Online+Store"
+      ],
+      "technologies": ["HTML5", "CSS3", "JavaScript", "Lightbox", "PayPal Integration"],
+      "results": [
+        "Aumento del 300% en ventas online",
+        "Exposiciones internacionales",
+        "Crecimiento de seguidores del 250%",
+        "50+ obras vendidas online"
+      ],
+      "client": "María Fernández - Artista",
+      "year": "2023",
+      "duration": "8 semanas",
+      "url": "https://maria-fernandez-art.com",
+      "featured": false,
+      "status": "completed"
+    },
+    {
+      "id": "project7",
+      "title": "Conferencia Tech 2024",
+      "category": "Branding de Evento",
+      "categories": ["marketing", "grafico"],
+      "description": "Identidad visual completa para conferencia de tecnología, incluyendo branding, señalética, merchandising y material digital.",
+      "image": "/placeholder.svg?height=400&width=600&text=Conferencia+Tech+2024",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Event+Branding",
+        "/placeholder.svg?height=600&width=800&text=Signage+Design",
+        "/placeholder.svg?height=600&width=800&text=Merchandise"
+      ],
+      "technologies": ["Event Branding", "Print Design", "Digital Assets", "Merchandise Design"],
+      "results": [
+        "1,500 asistentes",
+        "95% satisfacción del evento",
+        "Cobertura mediática nacional",
+        "Patrocinadores principales renovaron"
+      ],
+      "client": "Tech Conference Org",
+      "year": "2024",
+      "duration": "3 meses",
+      "url": "https://techconference2024.com",
+      "featured": true,
+      "status": "completed"
+    },
+    {
+      "id": "project8",
+      "title": "FitLife App",
+      "category": "App Design • Branding",
+      "categories": ["web", "branding"],
+      "description": "Diseño UX/UI para aplicación móvil de fitness con seguimiento de entrenamientos, nutrición y comunidad social.",
+      "image": "/placeholder.svg?height=400&width=600&text=FitLife+App",
+      "gallery": [
+        "/placeholder.svg?height=600&width=400&text=App+Screens",
+        "/placeholder.svg?height=600&width=400&text=User+Interface",
+        "/placeholder.svg?height=600&width=800&text=App+Store+Assets"
+      ],
+      "technologies": ["Figma", "Sketch", "Principle", "User Testing", "Prototyping"],
+      "results": [
+        "50K descargas en primer mes",
+        "4.8 estrellas en App Store",
+        "Retención del 75% a 30 días",
+        "Featured en App Store"
+      ],
+      "client": "FitLife Technologies",
+      "year": "2024",
+      "duration": "4 meses",
+      "url": "https://fitlife-app.com",
+      "featured": false,
+      "status": "completed"
+    },
+    {
+      "id": "project9",
+      "title": "Revista Lifestyle",
+      "category": "Diseño Editorial",
+      "categories": ["grafico"],
+      "description": "Diseño editorial para revista mensual de estilo de vida, incluyendo layout, tipografía y dirección de arte fotográfica.",
+      "image": "/placeholder.svg?height=400&width=600&text=Revista+Lifestyle",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Magazine+Cover",
+        "/placeholder.svg?height=600&width=800&text=Article+Layout",
+        "/placeholder.svg?height=600&width=800&text=Photo+Direction"
+      ],
+      "technologies": ["InDesign", "Photoshop", "Typography", "Print Production", "Photography"],
+      "results": [
+        "Aumento del 40% en circulación",
+        "Premio de diseño editorial",
+        "Expansión a formato digital",
+        "Renovación de contratos publicitarios"
+      ],
+      "client": "Lifestyle Magazine",
+      "year": "2023",
+      "duration": "Proyecto continuo",
+      "url": null,
+      "featured": false,
+      "status": "ongoing"
+    },
+    {
+      "id": "project10",
+      "title": "Plataforma E-learning",
+      "category": "Diseño Web • UX/UI",
+      "categories": ["web"],
+      "description": "Plataforma educativa online con sistema de cursos, evaluaciones y certificaciones para institución educativa.",
+      "image": "/placeholder.svg?height=400&width=600&text=Plataforma+E-learning",
+      "gallery": [
+        "/placeholder.svg?height=600&width=800&text=Dashboard+Student",
+        "/placeholder.svg?height=600&width=800&text=Course+Interface",
+        "/placeholder.svg?height=600&width=800&text=Admin+Panel"
+      ],
+      "technologies": ["React", "Node.js", "MongoDB", "Video Streaming", "Payment Gateway"],
+      "results": [
+        "5,000+ estudiantes registrados",
+        "95% tasa de finalización de cursos",
+        "Reducción del 60% en costos operativos",
+        "Expansión a 10 países"
+      ],
+      "client": "EduTech Institute",
+      "year": "2024",
+      "duration": "6 meses",
+      "url": "https://edutech-platform.com",
+      "featured": true,
+      "status": "completed"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "name": "Todos",
+      "description": "Todos los proyectos"
+    },
+    {
+      "id": "web",
+      "name": "Diseño Web",
+      "description": "Sitios web, aplicaciones y plataformas digitales"
+    },
+    {
+      "id": "branding",
+      "name": "Branding",
+      "description": "Identidad visual, logotipos y branding corporativo"
+    },
+    {
+      "id": "grafico",
+      "name": "Diseño Gráfico",
+      "description": "Material impreso, packaging y diseño editorial"
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "description": "Campañas digitales, redes sociales y publicidad"
+    }
+  ],
+  "settings": {
+    "itemsPerPage": 9,
+    "showFeaturedFirst": true,
+    "enableLazyLoading": true,
+    "defaultCategory": "all"
+  }
+}
