@@ -789,19 +789,15 @@ body {
 }
 
 .logos-track {
+  overflow-x: auto;
+  cursor: grab;
   display: flex;
-  animation: scroll 20s linear infinite;
-  gap: 60px;
+  gap: 32px;
+  scroll-behavior: smooth;
 }
 
-.logo-item {
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.logo-item:hover {
-  opacity: 1;
+.logos-track.dragging {
+  cursor: grabbing;
 }
 
 @keyframes scroll {
