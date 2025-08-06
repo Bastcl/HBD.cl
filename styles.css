@@ -634,16 +634,23 @@ body {
 
 .carousel-content {
   position: absolute;
-  top: 50%;
-  left: 50px;
-  transform: translateY(-50%);
-  color: white;
-  z-index: 2;
+  left: 30px;
+  right: 0;
+  bottom: 30px;
+  /* Puedes ajustar este valor según lo que necesites */
+  text-align: left;
+  color: #fff;
+  /* Si quieres un fondo semitransparente para mejor lectura: */
+  /* background: rgba(0,0,0,0.3); */
+  /* padding: 20px 0; */
+  /* border-radius: 10px; */
+  /* width: 100%; */
+  /* margin: 0 auto; */
 }
 
 .carousel-content h2 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
@@ -1417,4 +1424,37 @@ body {
     flex-direction: column;
     gap: 0;
   }
+}
+
+@media screen and (min-width: 1200px) {
+  .carousel-section {
+    background-color: #1D1D1B;
+    height: 400px;
+  }
+
+  .carousel-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-slide img {
+    height: 100%;
+    width: 720px;
+    object-fit: cover;
+  }
+  .carousel-content {
+    position: absolute;
+    left: 350px;
+    right: 0;
+    bottom: 30px; /* Puedes ajustar este valor según lo que necesites */
+    text-align: left;
+    color: #fff;
+    /* Si quieres un fondo semitransparente para mejor lectura: */
+    /* background: rgba(0,0,0,0.3); */
+    /* padding: 20px 0; */
+    /* border-radius: 10px; */
+    /* width: 100%; */
+    /* margin: 0 auto; */
+}
 }
