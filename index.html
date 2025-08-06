@@ -75,6 +75,21 @@
             </div>
         </div>
     </section>
+
+    <!-- Sección de Texto -->
+    <section class="text-section">
+        <div class="container">
+            <div class="text-content">
+                <h3>Nuestra filosofía</h3>
+                <p>Creemos que el buen diseño no solo se ve bien, sino que funciona bien. Cada proyecto es una
+                    oportunidad para crear algo extraordinario que genere impacto real en el mundo digital. Trabajamos
+                    de cerca con nuestros clientes para entender sus necesidades y superar sus expectativas.</p>
+                <p>Desde el concepto inicial hasta la implementación final, nos aseguramos de que cada detalle refleje
+                    la esencia de tu marca y comunique tu mensaje de manera efectiva.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Botón Contáctenos -->
     <section class="cta-section">
         <div class="container">
@@ -171,6 +186,28 @@
     </a>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.logos-track');
+            const logos = document.querySelectorAll('.logo-item');
+            const logoWidth = logos[0].offsetWidth + 20; // 20px de margen aprox
+            let position = 0;
+
+            // Clona los logos para efecto infinito
+            track.innerHTML += track.innerHTML;
+
+            function moveLogos() {
+                position -= 1;
+                if (Math.abs(position) >= logoWidth * logos.length) {
+                    position = 0;
+                }
+                track.style.transform = `translateX(${position}px)`;
+                requestAnimationFrame(moveLogos);
+            }
+
+            moveLogos();
+        });
+    </script>
 </body>
 
 </html>

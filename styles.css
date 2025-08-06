@@ -786,28 +786,20 @@ body {
 .logos-carousel {
   overflow: hidden;
   width: 100%;
+  position: relative;
+  height: 80px;
 }
 
 .logos-track {
-  overflow-x: auto;
-  cursor: grab;
   display: flex;
-  gap: 32px;
-  scroll-behavior: smooth;
+  align-items: center;
+  transition: none;
+  will-change: transform;
 }
 
-.logos-track.dragging {
-  cursor: grabbing;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+.logo-item {
+  flex: 0 0 auto;
+  margin: 0 10px;
 }
 
 /* Footer */
@@ -1439,11 +1431,13 @@ body {
     width: 720px;
     object-fit: cover;
   }
+
   .carousel-content {
     position: absolute;
     left: 350px;
     right: 0;
-    bottom: 30px; /* Puedes ajustar este valor según lo que necesites */
+    bottom: 30px;
+    /* Puedes ajustar este valor según lo que necesites */
     text-align: left;
     color: #fff;
     /* Si quieres un fondo semitransparente para mejor lectura: */
@@ -1452,5 +1446,5 @@ body {
     /* border-radius: 10px; */
     /* width: 100%; */
     /* margin: 0 auto; */
-}
+  }
 }
